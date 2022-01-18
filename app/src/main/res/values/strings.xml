@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IncommingCallExample</string>
+    <string name="trigger_incoming_call">Trigger Incoming Call</string>
+</resources>

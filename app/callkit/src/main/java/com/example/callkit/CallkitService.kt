@@ -57,7 +57,7 @@ class CallkitService : Service() {
         builder.setContentIntent(callingIntent)
         builder.setFullScreenIntent(callingIntent, true)
         builder.setContentTitle("Incoming call")
-        builder.setContentText("Incoming call")
+        builder.setContentText(intent.getStringExtra(CALLER_NAME))
         builder.setAutoCancel(true)
         // Use builder.addAction(..) to add buttons to answer or reject the call.
         val acceptAction = NotificationCompat.Action.Builder(
@@ -88,7 +88,7 @@ class CallkitService : Service() {
         val notification = builder.build()
         notification.flags = Notification.FLAG_INSISTENT
         notification.fullScreenIntent = callingIntent
-        notificationManager.notify("callnotification", 100, notification)
+        startForeground(100, notification)
     }
 
     private fun createCancelIntent(context: Context): PendingIntent {

@@ -14,11 +14,7 @@ class CallKit private constructor(val context: Context) {
             putExtra(CallkitService.NUMBER, number)
             action = HandleCallReceiver.ACTION_CREATE_CALL
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(intent)
-        } else {
-            context.startService(intent)
-        }
+        context.startService(intent)
     }
 
     fun closeIncomingCallScreen() {

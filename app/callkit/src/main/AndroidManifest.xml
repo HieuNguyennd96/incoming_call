@@ -3,6 +3,7 @@
     package="com.example.callkit">
 
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application>
         <service

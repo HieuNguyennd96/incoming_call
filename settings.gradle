@@ -8,4 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "IncommingCallExample"
 include ':app'
-include ':app:callkit'
+include ':app:callkit-kotlin'
+include ':app:callkit-java'

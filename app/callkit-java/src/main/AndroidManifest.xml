@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.callkit_java">
+
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <service
+            android:name="com.example.callkit_java.CallkitService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name="com.example.callkit_java.IncomingCallActivity" />
+
+        <receiver
+            android:name="com.example.callkit_java.HandleCallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.callkit.ACTION_CREATE_CALL" />
+                <action android:name="com.example.callkit.ACTION_ACCEPT_CALL" />
+                <action android:name="com.example.callkit.ACTION_CANCEL_CALL" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
